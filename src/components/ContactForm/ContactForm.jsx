@@ -12,11 +12,19 @@ const ContactForm = () => {
     e.preventDefault();
     const form = e.target;
 
-    const message = selectContacts.find(
+    const messageName = selectContacts.find(
       element => element.name === form.name.value
     );
-    if (message) {
-      alert(`${message.name} is already in contacts!`);
+    if (messageName) {
+      alert(`${messageName.name} is already in contacts!`);
+      return;
+    }
+
+    const messageNumber = selectContacts.find(
+      element => element.number === form.number.value
+    );
+    if (messageNumber) {
+      alert(`${messageNumber.number} is already in contacts!`);
       return;
     }
 
